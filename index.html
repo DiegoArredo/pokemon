@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>151 Pokemon</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+     body {
+      margin: 0;
+      padding: 0;
+      background-color: transparent;
+      background: url(img/background.png);
+      background-repeat: repeat;
+
+      font-size: 1rem;
+    } 
+
+    #header {
+      background-image: url(img/cab_pokedex.jpg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: left;
+
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      
+      <img class="img-fluid" src="img/cab_pokedex.jpg" alt="">
+
+      <!-- Button trigger modal -->
+      <!-- <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#pokeModal"
+      >
+        Launch demo modal
+      </button> -->
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="pokeModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Bulbasour</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body text-center">
+              <img 
+                id="imgpokemon"
+                width="150px"
+                class="img-fluid"
+                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+                alt=""
+              />
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th >Id</th>
+                    <th>Tipo</th>
+                    <th>Altura</th>
+                    <th>Peso</th>
+                    <th>Vida</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr id="infopokemon">
+                    <td>1</td>
+                    <td>
+                      <ul>
+                        <li>Hierva</li>
+                        <li>Roca</li>
+                      </ul>
+                    </td>
+                    <td>7</td>
+                    <td>45</td>
+                    <td>65</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- POKEDEX - IMAGENES -->
+
+      <div
+        id="pokemons"
+        class="row row-cols-3 row-cols-md-4 row-cols-lg-5 justify-content-evenly mt-1 mt-md-3 mt-lg-5"
+      >
+        <img
+          data-bs-toggle="modal"
+          data-bs-target="#pokeModal"
+          pokemon-id="1"
+          class="pokemon col img-fluid"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+        /><img
+          data-bs-toggle="modal"
+          data-bs-target="#pokeModal"
+          pokemon-id="2"
+          class="pokemon col img-fluid"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png"
+        /><img
+          data-bs-toggle="modal"
+          data-bs-target="#pokeModal"
+          pokemon-id="3"
+          class="pokemon col img-fluid"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png"
+        /><img
+        data-bs-toggle="modal"
+          data-bs-target="#pokeModal"
+          pokemon-id="4"
+          class="pokemon col img-fluid"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
+        /><img
+        data-bs-toggle="modal"
+          data-bs-target="#pokeModal"
+          pokemon-id="5"
+          class="pokemon col img-fluid"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png"
+        /><img
+        data-bs-toggle="modal"
+          data-bs-target="#pokeModal"
+          pokemon-id="6"
+          class="pokemon col img-fluid"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png"
+        /><img
+        data-bs-toggle="modal"
+          data-bs-target="#pokeModal"
+          pokemon-id="7"
+          class="pokemon col img-fluid"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png"
+        /><img
+        data-bs-toggle="modal"
+          data-bs-target="#pokeModal"
+          pokemon-id="8"
+          class="pokemon col img-fluid"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png"
+        /><img
+        data-bs-toggle="modal"
+          data-bs-target="#pokeModal"
+          pokemon-id="9"
+          class="pokemon col img-fluid"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png"
+        /><img
+        data-bs-toggle="modal"
+          data-bs-target="#pokeModal"
+          pokemon-id="10"
+          class="pokemon col img-fluid"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png"
+        /><img
+        data-bs-toggle="modal"
+          data-bs-target="#pokeModal"
+          pokemon-id="11"
+          class="pokemon col img-fluid"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/11.png"
+        /><img
+        data-bs-toggle="modal"
+          data-bs-target="#pokeModal"
+          pokemon-id="12"
+          class="pokemon col img-fluid"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png"
+        /><img
+        data-bs-toggle="modal"
+          data-bs-target="#pokeModal"
+          pokemon-id="13"
+          class="pokemon col img-fluid"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png"
+        /><img
+        data-bs-toggle="modal"
+          data-bs-target="#pokeModal"
+          pokemon-id="14"
+          class="pokemon col img-fluid"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png"
+        /><img
+        data-bs-toggle="modal"
+          data-bs-target="#pokeModal"
+          pokemon-id="15"
+          class="pokemon col img-fluid"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/15.png"
+        />
+      </div>
+      <div class="row justify-content-between mt-3 mx-3">
+        <a id="btnPrev" class="col-4 btn btn-danger">PREV</a>
+        <a id="btnNext" class="col-4 btn btn-danger">NEXT</a>
+      </div>
+    </div>
+
+    <script>
+
+      
+      num = 16;
+
+      // BOTON NEXT
+      $("#btnNext").click(function (e) {
+        e.preventDefault();
+
+        $("#pokemons").html("");
+
+        let ultimo = num + 14;
+
+        while (num <= ultimo) {
+          $("#pokemons").append(
+            `<img 
+              data-bs-toggle="modal"
+              data-bs-target="#pokeModal" 
+              pokemon-id="${num}" 
+              class="pokemon col img-fluid" 
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${num}.png">`
+          );
+          num++;
+        }
+        console.log(num);
+      });
+
+      //BOTON PREV V2
+      $("#btnPrev").click(function (e) {
+        e.preventDefault();
+
+        if (num > 16) {
+          $("#pokemons").html("");
+          num -= 30;
+          let ultimo = num + 14;
+
+          while (num <= ultimo) {
+            $("#pokemons").append(
+              `<img 
+              data-bs-toggle="modal"
+              data-bs-target="#pokeModal" 
+              pokemon-id="${num}" 
+              class="pokemon col  img-fluid" 
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${num}.png">`
+            );
+            num++;
+          }
+          console.log(num);
+        }
+      });
+    </script>
+
+    <script>
+      $(document).on("click", ".pokemon", function () {
+        
+        let pokenumero = $(this).attr("pokemon-id");
+        console.log(pokenumero);
+
+        $.get(`https://pokeapi.co/api/v2/pokemon/${pokenumero}/`,function (pokemon){
+
+          var html_infopokemon = "";
+          html_infopokemon += `<td>${pokenumero}</td>`;
+          html_infopokemon += `<td><ul>`
+          for(tipos of pokemon.types){
+            console.log(tipos.type.name);
+            html_infopokemon += `<li>${tipos.type.name}</li>
+            `;
+          }
+          html_infopokemon += `<ul></td>`;
+
+          html_infopokemon += `<td>${pokemon.height}</td>`; 
+          html_infopokemon += `<td>${pokemon.weight}</td>`;
+          html_infopokemon += `<td>${pokemon.stats[0].base_stat}</td>`; 
+          
+          $("#infopokemon").html(html_infopokemon);
+          $("#imgpokemon").attr("src",`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokenumero}.png`)
+          
+
+          
+
+          // console.log(pokemon);
+          console.log(pokemon.types)
+          console.log(html_infopokemon);
+
+
+        });
+        
+        
+
+      });
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
